@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"jsx": "react",
+		"allowSyntheticDefaultImports": true,
+		"alwaysStrict": true,
+		"declaration": true,
+		"declarationMap": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"lib": ["dom", "es2017"]
+	},
+	"include": ["src/*"]
+}
