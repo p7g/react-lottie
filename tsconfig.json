@@ -1,5 +1,9 @@
 {
 	"compilerOptions": {
+		"target": "es5",
+		"outDir": "dist",
+		"module": "es2015",
+		"moduleResolution": "node",
 		"jsx": "react",
 		"allowSyntheticDefaultImports": true,
 		"alwaysStrict": true,
@@ -10,5 +14,6 @@
 		"strict": true,
 		"lib": ["dom", "es2017"]
 	},
-	"include": ["src/*"]
+	"include": ["src"],
+	"exclude": ["node_modules", "dist"]
 }
