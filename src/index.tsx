@@ -112,8 +112,8 @@ export default class Lottie extends React.Component<Props, State> {
 		props: Props,
 	): {
 		lottie: WithOptionalContainer<AnimationConfig>;
-		own: OwnProps;
-		div: Omit<Props, keyof OwnProps & AnimationConfig>;
+		own: OwnProps & { animationType: Props["animationType"] };
+		div: Omit<Props, keyof OwnProps | keyof AnimationConfig | "animationType">;
 	} {
 		const {
 			// lottie props
@@ -124,6 +124,7 @@ export default class Lottie extends React.Component<Props, State> {
 			name,
 			rendererSettings,
 
+			animationType,
 			playState,
 			direction,
 			speed,
@@ -151,6 +152,7 @@ export default class Lottie extends React.Component<Props, State> {
 				rendererSettings,
 			},
 			own: {
+				animationType,
 				playState,
 				direction,
 				speed,
@@ -379,7 +381,7 @@ export default class Lottie extends React.Component<Props, State> {
 		}
 
 		if (newState) {
-			setTimeout(() => this.setState(newState), 0);
+			setTimeout(() => this.setState(newState as State), 0);
 		}
 
 		return <div ref={this.ref} {...rest} />;
